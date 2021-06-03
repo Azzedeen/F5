@@ -1,19 +1,20 @@
 ---
 
+- name: Use Collections
+  hosts: f5
+  connection: local
 
-
-- name: Restore conf
-  hosts: all
-  gather_facts: False
-  
-  tasks:  
-
-    - name: Reset the BIG-IP configuration, for example, to RMA the device
-      shell: tmsh load /sys config no-passphrase azzedeen
-      provider:
-          server: 10.138.0.2
-          password: Nomios101
-          user: admin
+    collections:
+      - f5networks.f5_modules
+      
+- name: Save the running configuration of the BIG-IP
+  bigip_config:
+    save: yes
+    provider:
+      server: lb.mydomain.com
+      password: secret
+      user: admin
+  delegate_to: localhost
         
    
 
