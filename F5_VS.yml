@@ -4,13 +4,20 @@
   hosts: all
   connection: local
   
+  vars:
+    provider:
+      password: Nomios101
+      server: 10.138.0.2
+      user: admin
+      validate_certs: False
+
   tasks:
-  - name: Create a pool
-    bigip_pool:
-      provider: "{{ provider }}"
-      lb_method: ratio-member
-      name: web
-      slow_ramp_time: 120
-    delegate_to: localhost
+    - name: Create a pool
+      bigip_pool:
+        provider: "{{ provider }}"
+        lb_method: ratio-member
+        name: web
+        slow_ramp_time: 120
+      delegate_to: localhost
     
   
