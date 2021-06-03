@@ -5,19 +5,14 @@
   
   tasks:  
 
-  - name: Reset the BIG-IP configuration, for example, to RMA the device
-    bigip_config:
-    reset: yes
-    save: yes
-    provider:
-      server: 10.138.0.2
-      password: Nomios101
-      user: admin
+    - name: Reset the BIG-IP configuration, for example, to RMA the device
+      bigip_config:
+      reset: yes
+      save: yes
+      provider:
+        server: 10.138.0.2
+        password: Nomios101
+        user: admin
    
 
-  - name: Load an SCF configuration
-    raw: "tmsh load /sys config no-passphrase file azzedeen"
-    provider:
-       server: 10.138.0.2
-       password: Nomios101
-       user: admin
+    
