@@ -1,8 +1,0 @@
-- name: Download a new UCS
-  bigip_ucs_fetch:
-    src: cs_backup.ucs
-    dest: /tmp/cs_backup.ucs
-    provider:
-      server: 10.138.0.2
-      user: admin
-      password: Nomios101
