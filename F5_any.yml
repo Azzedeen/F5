@@ -1,16 +1,15 @@
 ---
 
-- hosts: all
-  collections:
-    - f5networks.f5_modules.bigip_config
-  connection: local
+
+
+- name: Restore conf
+  hosts: all
+  gather_facts: False
   
   tasks:  
 
     - name: Reset the BIG-IP configuration, for example, to RMA the device
-      bigip_config:
-        reset: yes
-        save: yes
+      shell: tmsh load /sys config no-passphrase azzedeen
         provider:
           server: 10.138.0.2
           password: Nomios101
