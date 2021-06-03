@@ -22,7 +22,7 @@
 
 - name: Load an SCF configuration
   bigip_config:
-    merge_content: "{{ lookup('file', '/path/to/config.scf') }}"
+    merge_content: "{{ lookup('file', '/path/to/azzedeen.scf') }}"
     provider:
       server: 10.138.0.2
       password: Nomios101
