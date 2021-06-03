@@ -3,18 +3,15 @@
 - name: Use Collections
   hosts: f5
   connection: local
-
-    collections:
-      - f5networks.f5_modules.bigip_config
-      
-- name: Save the running configuration of the BIG-IP
-  bigip_config:
-    save: yes
-    provider:
-      server: lb.mydomain.com
-      password: secret
-      user: admin
-  delegate_to: localhost
+  
+  tasks:
+    - f5networks.f5_modules.bigip_config:
+      save: yes
+      provider:
+        server: lb.mydomain.com
+        password: secret
+        user: admin
+    delegate_to: localhost
         
    
 
