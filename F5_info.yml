@@ -17,15 +17,15 @@
           validate_certs: no
       register: device_facts
 
-   - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
-     debug:
-       var: device_facts
+    - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
+      debug:
+        var: device_facts
 
-   - name: DISPLAY ONLY THE MAC ADDRESS
-     debug:
-       var: device_facts['system_info']['product_version']
+    - name: DISPLAY ONLY THE MAC ADDRESS
+      debug:
+        var: device_facts['system_info']['product_version']
 
-   - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
-     debug:
-       var: device_facts
-     tags: debug
+    - name: DISPLAY COMPLETE BIG-IP SYSTEM INFORMATION
+      debug:
+        var: device_facts
+      tags: debug
