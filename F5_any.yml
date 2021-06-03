@@ -11,7 +11,7 @@
         server: lb.mydomain.com
         password: secret
         user: admin
-    delegate_to: localhost
+
         
    
 
