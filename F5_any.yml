@@ -6,13 +6,13 @@
   tasks:  
 
     - name: Reset the BIG-IP configuration, for example, to RMA the device
-      bigip_config:
-      reset: yes
-      save: yes
-      provider:
-        server: 10.138.0.2
-        password: Nomios101
-        user: admin
+        bigip_config:
+        reset: yes
+        save: yes
+        provider:
+          server: 10.138.0.2
+          password: Nomios101
+          user: admin
    
 
     
