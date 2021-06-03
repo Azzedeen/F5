@@ -24,4 +24,4 @@
         commands:
           - save sys ucs {{ inventory_hostname }}-{{ date['stdout'] }}
         provider: "{{f5Provider}}"
-      delegate_to: localhost
+ 
