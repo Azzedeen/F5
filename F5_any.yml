@@ -9,10 +9,6 @@
   tasks:  
 
     - name: Reset the BIG-IP configuration, for example, to RMA the device
-      provider:
-          server: 10.138.0.2
-          password: Nomios101
-          user: admin
       shell: tmsh load /sys config no-passphrase azzedeen
         
    
