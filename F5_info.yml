@@ -1,8 +1,8 @@
 ---
 - name: GRAB F5 FACTS
- hosts: all
- connection: local
- gather_facts: no
+  hosts: all
+  connection: local
+  gather_facts: no
 
  tasks:
    - name: COLLECT BIG-IP FACTS
