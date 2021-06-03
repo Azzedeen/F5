@@ -25,10 +25,3 @@
           - save sys ucs {{ inventory_hostname }}-{{ date['stdout'] }}
         provider: "{{f5Provider}}"
       delegate_to: localhost
-
-    - name: Fetch UCS archive
-      bigip_ucs_fetch:
-        src: "{{ inventory_hostname }}-{{ date['stdout'] }}.ucs"
-        dest: "tmp/{{ inventory_hostname }}-{{ date['stdout'] }}.ucs"
-        provider: "{{f5Provider}}"
-      delegate_to: localhost
