@@ -1,6 +1,6 @@
 ---
 - name: Run UCS Archive on F5 BIG-IPs
-  hosts: F5All
+  hosts: all
   connection: local
   gather_facts: False
 
