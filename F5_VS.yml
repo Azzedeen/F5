@@ -9,6 +9,8 @@
       password: Nomios101
       server: 10.138.0.2
       user: admin
+      validate_certs: no
+      server_port: 8443
     
 
   tasks:
