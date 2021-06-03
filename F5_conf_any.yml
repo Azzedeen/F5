@@ -1,25 +1,34 @@
 ---
 
-- name: Save and restore configuration
-  hosts: all
-  connection: local
+- name: Save the running configuration of the BIG-IP
+  bigip_config:
+    save: yes
+    provider:
+      server: 10.138.0.2
+      password: Nomios101
+      user: admin   
+  delegate_to: localhost
 
-  tasks:
-    - name: Reset the BIG-IP configuration, for example, to RMA the device
-      bigip_config:
-        reset: yes
-        save: yes
-        provider:
-          server: 10.138.0.2
-          password: Nomios101
-          user: admin
-
-    - name: Load an SCF configuration
-      bigip_config:
-        merge_content: "{{ lookup('file', '/path/to/azzedeen.scf') }}"
-        provider:
-          server: 10.138.0.2
-          password: Nomios101
-          user: admin
+- name: Reset the BIG-IP configuration, for example, to RMA the device
+  bigip_config:
+    reset: yes
+    save: yes
+    provider:
+      server: 10.138.0.2
+      password: Nomios101
+      user: admin
    
+  delegate_to: localhost
+
+- name: Load an SCF configuration
+  bigip_config:
+    merge_content: "{{ lookup('file', '/path/to/config.scf') }}"
+    provider:
+      server: 10.138.0.2
+      password: Nomios101
+      user: admin
+   
+  delegate_to: localhost
+
+
   
