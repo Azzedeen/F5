@@ -6,11 +6,11 @@
   
   tasks:
     - f5networks.f5_modules.bigip_config:
-      save: yes
-      provider:
-        server: lb.mydomain.com
-        password: secret
-        user: admin
+        save: yes
+        provider:
+          server: lb.mydomain.com
+          password: secret
+          user: admin
 
         
    
