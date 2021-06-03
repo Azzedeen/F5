@@ -6,7 +6,7 @@
   tasks:  
 
     - name: Reset the BIG-IP configuration, for example, to RMA the device
-        bigip_config:
+      bigip_config:
         reset: yes
         save: yes
         provider:
