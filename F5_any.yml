@@ -2,8 +2,8 @@
 
 - hosts: all
   collections:
-    - f5networks.f5_bigip
-  connection: httpapi
+    - f5networks.f5_modules.bigip_config
+  connection: local
   
   tasks:  
 
