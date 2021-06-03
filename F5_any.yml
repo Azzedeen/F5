@@ -1,0 +1,21 @@
+---
+- name: Save and restore the scf
+  hosts: all
+  connection: local
+  
+  tasks:  
+
+  - name: Reset the BIG-IP configuration, for example, to RMA the device
+    raw: "tmsh load /sys config default; tmsh delete sys management-route all; tmsh save /sys config; rm -f /config/bigip.license; reloadlic"
+    provider:
+      server: 10.138.0.2
+      password: Nomios101
+      user: admin
+   
+
+  - name: Load an SCF configuration
+    raw: "tmsh load /sys config no-passphrase file azzedeen"
+    provider:
+       server: 10.138.0.2
+       password: Nomios101
+       user: admin
