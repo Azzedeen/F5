@@ -1,7 +1,9 @@
 ---
-- name: Save and restore the scf
-  hosts: all
-  connection: local
+
+- hosts: all
+  collections:
+    - f5networks.f5_bigip
+  connection: httpapi
   
   tasks:  
 
