@@ -3,20 +3,10 @@
   hosts: all
   connection: local
   
-  tasks:
-  - name: Save the running configuration of the BIG-IP
-    bigip_config:
-      save: yes
-      provider:
-        server: 10.138.0.2
-        password: Nomios101
-        user: admin   
-
+  tasks:  
 
   - name: Reset the BIG-IP configuration, for example, to RMA the device
-    bigip_config:
-      reset: yes
-      save: yes
+    raw: "tmsh load /sys config default; tmsh delete sys management-route all; tmsh save /sys config; rm -f /config/bigip.license; reloadlic"
       provider:
         server: 10.138.0.2
         password: Nomios101
@@ -24,8 +14,7 @@
    
 
   - name: Load an SCF configuration
-    bigip_config:
-      merge_content: "{{ lookup('file', '/path/to/azzedeen.scf') }}"
+    raw: "tmsh load /sys config no-passphrase file azzedeen"
       provider:
         server: 10.138.0.2
         password: Nomios101
