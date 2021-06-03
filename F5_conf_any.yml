@@ -9,17 +9,19 @@
       bigip_config:
         reset: yes
         save: yes
-        server: 10.138.0.2
-        password: Nomios101
-        user: admin
-        validate_certs: no
+        provider:
+          server: 10.138.0.2
+          password: Nomios101
+          user: admin
+          validate_certs: no
 
 
     - name: Load an SCF configuration
       bigip_config:
         merge_content: "{{ lookup('file', '/path/to/azzedeen.scf') }}"
-        server: 10.138.0.2
-        password: Nomios101
-        user: admin
-        validate_certs: no
+        provider:
+          server: 10.138.0.2
+          password: Nomios101
+          user: admin
+          validate_certs: no
   
