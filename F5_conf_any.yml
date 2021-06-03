@@ -13,8 +13,6 @@
           server: 10.138.0.2
           password: Nomios101
           user: admin
-          validate_certs: no
-
 
     - name: Load an SCF configuration
       bigip_config:
@@ -23,5 +21,5 @@
           server: 10.138.0.2
           password: Nomios101
           user: admin
-          validate_certs: no
+   
   
