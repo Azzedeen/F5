@@ -8,8 +8,8 @@
     - f5networks.f5_modules.bigip_config:
         save: yes
         provider:
-          server: lb.mydomain.com
-          password: secret
+          server: 10.138.0.2
+          password: Nomios101 
           user: admin
 
         
