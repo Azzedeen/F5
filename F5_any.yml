@@ -1,7 +1,7 @@
 ---
 
 - name: Use Collections
-  hosts: f5
+  hosts: all
   connection: local
   
   tasks:
